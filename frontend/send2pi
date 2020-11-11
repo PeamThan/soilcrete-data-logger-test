@@ -1,0 +1,2 @@
+ssh pi@${PI_ADDRESS} rm -rf ~/flutter-apps/soilcrete/flutter_assets
+rsync -av ./build/flutter_assets pi@${PI_ADDRESS}:/home/pi/flutter-apps/soilcrete

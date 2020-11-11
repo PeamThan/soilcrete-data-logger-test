@@ -1,0 +1,30 @@
+#!/bin/sh
+
+USB_DISK_DRIVE="/dev/sda1"
+
+if [ $1 == "mount" ]
+then
+	sudo mount -o umask=0 $USB_DISK_DRIVE /media/usb
+	if [ $? -eq 0 ]
+	then
+		echo OK
+	else
+		echo FAIL
+	fi
+
+elif [ $1 == "umount" ]
+then
+	sudo umount /media/usb
+	if [ $? -eq 0 ]
+	then
+		echo OK
+	else
+		echo FAIL
+	fi
+
+else
+	echo "Wrong script parameter."
+fi
+
+
+
